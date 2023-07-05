@@ -205,10 +205,14 @@ cursor: pointer;
     text-align: left;
     font-size: 35px;
     font-weight: bold;
-    /* text-decoration: underline; */
+    border-bottom: 1px solid #33333347;
     margin-bottom: 25px;
 }
-
+.container h1 span.mdi{
+    font-size: 36px;
+    display: inline-block;
+    margin-right: 15px;
+}
 .posts_content{
     margin-bottom: 30px;
 }
