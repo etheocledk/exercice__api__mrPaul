@@ -1,3 +1,18 @@
+//date module
+const showDate = (Date, opt={}) => {
+  const dateTime = Date.split(' ')
+  const date = dateTime[0].split('-')
+  const time = dateTime[1]
+
+  return {
+    full: `Le ${date[2]}/${date[1]}/${date[0]} à ${time.substring(0, 5)}`,
+    date: `${date[2]}/${date[1]}/${date[0]}`,
+    time: `${time.substring(0, 5)}`
+  }
+}
+
+
+
 async function blogLoader() {
     let link = window.location.pathname
 
@@ -45,7 +60,7 @@ async function blogLoader() {
                         <div class="banner_content_right">
                             <div class="banner_content_right_author">
                                 <h4>${dataPosts.posts[randomIndex].user_name}</h4>
-                                <h4>${dataPosts.posts[randomIndex].published_at}</h4>
+                                <h4>${showDate(dataPosts.posts[randomIndex].published_at).full}</h4>
                             </div>
                             <p id="titre">${dataPosts.posts[randomIndex].title}</p>
                         </div>
@@ -69,7 +84,7 @@ async function blogLoader() {
                                     <img src="https://test1.ecole229.bj${item.image}" alt="">
                                 </div>
                                 <div class="post_articles_content_item_texte">
-                                    <p id="date"><span class="mdi mdi-calendar-month"></span> ${item.published_at}</p>
+                                    <p id="date"><span class="mdi mdi-calendar-month"></span> ${showDate(item.published_at).full}</p>
                                     <h4 id="title">${item.title}</h4>
                                     <a class='more' href="/detail.html?id=${item.id}">Voir plus...</a>
                                 </div>
@@ -147,7 +162,7 @@ async function blogLoader() {
                                                                         <img src="https://test1.ecole229.bj${item.image}" alt="">
                                                                     </div>
                                                                     <div class="post_articles_content_item_texte">
-                                                                        <p id="date"><span class="mdi mdi-calendar-month"></span> ${item.published_at}</p>
+                                                                        <p id="date"><span class="mdi mdi-calendar-month"></span>${showDate(item.published_at).full}</p>
                                                                         <h4 id="title">${item.title}</h4>
                                                                         <a class='more' href="/detail.html?id=${item.id}">Voir plus...</a>
                                                                     </div>
@@ -182,7 +197,7 @@ async function blogLoader() {
                                                                                     <img src="https://test1.ecole229.bj${item.image}" alt="">
                                                                                 </div>
                                                                                 <div class="post_articles_content_item_texte">
-                                                                                    <p id="date"><span class="mdi mdi-calendar-month"></span> ${item.published_at}</p>
+                                                                                    <p id="date"><span class="mdi mdi-calendar-month"></span>${showDate(item.published_at).full}</p>
                                                                                     <h4 id="title">${item.title}</h4>
                                                                                     <a class='more' href="/detail.html?id=${item.id}">Voir plus...</a>
                                                                                 </div>
@@ -209,7 +224,7 @@ async function blogLoader() {
                                             <img src="https://test1.ecole229.bj${item.image}" alt="">
                                         </div>
                                         <div class="post_articles_content_item_texte">
-                                            <p id="date"><span class="mdi mdi-calendar-month"></span> ${item.published_at}</p>
+                                            <p id="date"><span class="mdi mdi-calendar-month"></span>${showDate(item.published_at).full}</p>
                                             <h4 id="title">${item.title}</h4>
                                             <a class='more' href="/detail.html?id=${item.id}">Voir plus...</a>
                                         </div>
@@ -262,11 +277,11 @@ async function blogLoader() {
                 <div class="modal__contenu">
                     <p><strong>Nom d'utilisateur: </strong> ${item.user_name}</p>
                     <p><strong>Titre: </strong>${item.title}</p>
-                    <p><strong>Date: </strong>${item.published_at}</p>
+                    <p><strong>Date: </strong>${showDate(item.published_at).full}</p>
                     <p><strong>Titre de l'utilisateur: </strong>${item.user_title}</p>
                     <p><strong>Description: </strong>${item.description}</p>
                     <div class="lien">
-                        <a href="./index.html" class="retour">${'Retour'}</a>
+                        <a href="/" class="retour">${'Retour'}</a>
                     </div>
                 </div>
             </div>`
