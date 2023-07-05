@@ -6,11 +6,12 @@
     position: relative;
     font-size: 14px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+    color: black;
 }
 
 body{
     overflow-x: hidden;
+    background-color:rgba(0, 4, 255, 0.034)
 }
 
 .wrapper{
@@ -38,14 +39,37 @@ img{
 }
 
 .header{
-    background-color: rgb(0, 195, 255);
-    padding: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #fff;
+    z-index: 80;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.navbar_logo a{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.navbar_logo{
+    background-color: brown;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .navbar_menu ul{
@@ -53,9 +77,15 @@ img{
     gap: 70px;
 }
 
+.navbar_menu ul li a{
+    color: black;
+    font-size: 14px;
+}
+
 .banner_content{
     display: flex;
-    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     gap: 20px;
 }
 
@@ -70,11 +100,12 @@ img{
 
 .banner_content_right{
     width: calc(100% - 400px);
+    display: block;
 }
 
-.banner_content_right_author{
-    display: flex;
-    justify-content: space-between;
+.banner_content_right_author h4{
+    margin-top: 30px;
+    font-size: 30px;
 }
 
 .posts_content{
@@ -93,6 +124,7 @@ img{
 .post_articles_content_item{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
+    background-color: white;
 }
 
 
@@ -112,6 +144,9 @@ img{
     width: 300px;
     display: flex;
     flex-direction: column;
+    border: solid 1px rgba(185, 153, 153, 0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     gap: 15px;
     padding: 15px;
 }
@@ -123,7 +158,23 @@ img{
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
 
+.more{
+    display: inline-block;
+    background-color: rgb(75, 75, 252);
+    border-radius:10px;
+    padding: 10px 10px ;
+    width: max-content;
+    white-space: nowrap;
+    color: white;
+    font-weight: bold;
+}
+
+.more:hover{
+    background: none;
+    border: solid 1px brown;
+    color: brown;
 }
 
 .posts_categories_content, .posts_categories_content_type{
@@ -146,8 +197,10 @@ img{
 }
 
 .posts_categories_content_type button:hover{
-color: black;
+color: brown;
 background-color: transparent;
+border: solid 1px brown;
+cursor: pointer;
 }
 
 .container h1{
@@ -162,11 +215,11 @@ background-color: transparent;
     margin-bottom: 30px;
 }
 
-ul li a{
+/* ul li a{
     color: white;
 font-size: 18px;
 font-weight: bold;
-}
+} */
 
 
 
@@ -246,4 +299,27 @@ font-weight: bold;
 .lien{
     width: 100%;
     text-align: center;
-} 
+}
+
+.pageButton__container{
+    text-align: center;
+}
+
+.pageButton__container a{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 15px;
+    /* border: solid 1px black; */
+    border-radius: 100%;
+}
+
+.pageButton__container button{
+    border: none;
+    background: none;
+    padding: 10px;
+}
+
+.pageButton__container a.active{
+    background-color: brown;
+    color: white;
+}
